@@ -1,43 +1,24 @@
-<!-- <div
-  class="d-flex flex-column min-vw-100 justify-content-center align-items-center px-3 mt-5"
->
-  <div *ngIf="isLoading" style="text-align: center">
+<div class="d-flex flex-column min-vw-100 justify-content-center align-items-center px-3 mt-5">
+
+  
+  <!-- <div *ngIf="isLoading" style="text-align: center">
     <app-loading-spinner></app-loading-spinner>
-  </div>
-  <div class="alert alert-danger" *ngIf="error">
+  </div> -->
+  <!-- <div class="alert alert-danger" *ngIf="error">
     <p>{{ error }}</p>
-  </div>
-  <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+  </div> -->
+  <!-- <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading"></form> -->
+  <form #authForm="ngForm">
     <div class="form-group">
       <label for="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        class="form-control"
-        ngModel
-        name="email"
-        required
-        email
-      />
+      <input type="email" id="email" class="form-control" ngModel name="email" required email />
     </div>
     <div class="form-group mt-2">
       <label for="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        class="form-control"
-        ngModel
-        name="password"
-        required
-        minlength="6"
-      />
+      <input type="password" id="password" class="form-control" ngModel name="password" required minlength="6" />
     </div>
     <div class="mt-2">
-      <button
-        class="btn btn-primary me-2 justify-content-end"
-        type="submit"
-        [disabled]="!authForm.valid"
-      >
+      <button class="btn btn-primary me-2 justify-content-end" type="submit" [disabled]="!authForm.valid">
         {{ isLoginMode ? "Login" : "Sign Up" }}
       </button>
       <button class="btn btn-primary" (click)="onSwitchMode()" type="button">
@@ -45,4 +26,4 @@
       </button>
     </div>
   </form>
-</div> -->
+</div>

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { Observable, Subscription } from 'rxjs';
+
+import { AuthService, AuthResponseData } from './auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -7,7 +11,16 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./auth.component.css'],
 })
 export class AuthComponent implements OnInit {
-  constructor() {}
+
+  isLoginMode = true;
+  isLoading = false;
+  // `error: string = null;
+
+  constructor(private authService: AuthService, private router: Router) {}
+
+  onSwitchMode() {
+    this.isLoginMode = !this.isLoginMode;
+  }
 
   ngOnInit(): void {}
 }
